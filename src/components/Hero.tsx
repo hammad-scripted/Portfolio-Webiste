@@ -6,13 +6,15 @@ import { Mail, ArrowRight, Star, ShieldCheck } from "lucide-react";
 import { site, whatsappLink } from "@/config/site";
 import { WhatsAppIcon } from "./icons";
 
+const EASE = [0.22, 1, 0.36, 1] as const;
+
 const container = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } },
 };
 const item = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
 };
 
 export function Hero() {
@@ -110,7 +112,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, delay: 0.3, ease: EASE }}
           className="relative mx-auto w-full max-w-md"
         >
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-brand-900/20 ring-1 ring-brand-900/5">
