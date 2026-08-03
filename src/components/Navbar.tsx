@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Leaf } from "lucide-react";
 import { site } from "@/config/site";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { href: "#about", label: "About" },
@@ -39,7 +40,7 @@ export function Navbar() {
           <span className="grid h-10 w-10 place-items-center rounded-full border border-gold-400/60 text-brand-600 transition-all group-hover:border-gold-500 group-hover:text-brand-700">
             <Leaf className="h-5 w-5" />
           </span>
-          <span className="font-serif text-xl font-medium tracking-tight text-brand-950">
+          <span className="font-serif text-xl font-medium tracking-tight text-brand-950 dark:text-ivory">
             {site.doctorName}
           </span>
         </a>
@@ -50,7 +51,7 @@ export function Navbar() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="group relative px-3 py-2 text-[0.8rem] font-medium uppercase tracking-widest text-brand-900/80 transition-colors hover:text-brand-700"
+                className="group relative px-3 py-2 text-[0.8rem] font-medium uppercase tracking-widest text-brand-900/80 transition-colors hover:text-brand-700 dark:text-brand-100/80 dark:hover:text-gold-300"
               >
                 {l.label}
                 <span className="absolute inset-x-3 -bottom-0.5 h-px origin-left scale-x-0 bg-gold-500 transition-transform duration-300 group-hover:scale-x-100" />
@@ -60,21 +61,27 @@ export function Navbar() {
           <li>
             <a
               href="#contact"
-              className="ml-3 rounded-full border border-brand-600 bg-brand-600 px-6 py-2.5 text-[0.8rem] font-semibold uppercase tracking-widest text-ivory shadow-lg shadow-brand-900/10 transition-all hover:bg-transparent hover:text-brand-700"
+              className="ml-3 rounded-full border border-brand-600 bg-brand-600 px-6 py-2.5 text-[0.8rem] font-semibold uppercase tracking-widest text-ivory shadow-lg shadow-brand-900/10 transition-all hover:bg-transparent hover:text-brand-700 dark:border-gold-500 dark:bg-gold-500 dark:text-night dark:hover:bg-transparent dark:hover:text-gold-300"
             >
               Book Now
             </a>
           </li>
+          <li>
+            <ThemeToggle className="ml-1" />
+          </li>
         </ul>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="rounded-lg p-2 text-brand-900 lg:hidden"
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        {/* Mobile actions */}
+        <div className="flex items-center gap-1 lg:hidden">
+          <ThemeToggle />
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="rounded-lg p-2 text-brand-900 dark:text-brand-100"
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
@@ -93,7 +100,7 @@ export function Navbar() {
                   <a
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="block rounded-lg px-4 py-3 text-sm font-medium uppercase tracking-widest text-brand-900 hover:bg-brand-100"
+                    className="block rounded-lg px-4 py-3 text-sm font-medium uppercase tracking-widest text-brand-900 hover:bg-brand-100 dark:text-brand-100 dark:hover:bg-ink-soft"
                   >
                     {l.label}
                   </a>
@@ -103,7 +110,7 @@ export function Navbar() {
                 <a
                   href="#contact"
                   onClick={() => setOpen(false)}
-                  className="mt-2 block rounded-full bg-brand-600 px-5 py-3 text-center text-sm font-semibold uppercase tracking-widest text-ivory"
+                  className="mt-2 block rounded-full bg-brand-600 px-5 py-3 text-center text-sm font-semibold uppercase tracking-widest text-ivory dark:bg-gold-500 dark:text-night"
                 >
                   Book Now
                 </a>

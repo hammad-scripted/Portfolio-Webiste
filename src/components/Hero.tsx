@@ -26,13 +26,13 @@ export function Hero() {
       {/* Decorative animated blobs — soft, refined */}
       <motion.div
         aria-hidden
-        className="absolute -left-40 top-16 h-[30rem] w-[30rem] rounded-full bg-brand-200/45 blur-3xl"
+        className="absolute -left-40 top-16 h-[30rem] w-[30rem] rounded-full bg-brand-200/45 blur-3xl dark:bg-brand-800/40"
         animate={{ scale: [1, 1.12, 1], x: [0, 30, 0] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         aria-hidden
-        className="absolute -right-40 bottom-0 h-[32rem] w-[32rem] rounded-full bg-gold-200/50 blur-3xl"
+        className="absolute -right-40 bottom-0 h-[32rem] w-[32rem] rounded-full bg-gold-200/50 blur-3xl dark:bg-gold-600/15"
         animate={{ scale: [1, 1.18, 1], y: [0, -30, 0] }}
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -48,7 +48,7 @@ export function Hero() {
 
           <motion.h1
             variants={item}
-            className="mt-7 font-serif text-5xl font-light leading-[1.02] tracking-tight text-brand-950 sm:text-6xl lg:text-7xl"
+            className="mt-7 font-serif text-5xl font-light leading-[1.02] tracking-tight text-brand-950 dark:text-ivory sm:text-6xl lg:text-7xl"
           >
             Healing,
             <br />
@@ -57,7 +57,7 @@ export function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-7 flex items-center gap-3 text-sm font-medium uppercase tracking-[0.2em] text-brand-700"
+            className="mt-7 flex items-center gap-3 text-sm font-medium uppercase tracking-[0.2em] text-brand-700 dark:text-brand-300"
           >
             <ShieldCheck className="h-4 w-4 text-gold-500" />
             {site.title}
@@ -65,7 +65,7 @@ export function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-5 max-w-lg text-base leading-relaxed text-brand-800/70 sm:text-lg"
+            className="mt-5 max-w-lg text-base leading-relaxed text-brand-800/70 dark:text-brand-100/60 sm:text-lg"
           >
             {site.tagline} For over {site.yearsExperience} years,{" "}
             {site.doctorName} has blended authentic Ayurvedic wisdom with modern
@@ -75,7 +75,7 @@ export function Hero() {
           <motion.div variants={item} className="mt-9 flex flex-wrap gap-3">
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-brand-700 px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-ivory shadow-xl shadow-brand-900/15 transition-all hover:bg-brand-800"
+              className="group inline-flex items-center gap-2 rounded-full bg-brand-700 px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-ivory shadow-xl shadow-brand-900/15 transition-all hover:bg-brand-800 dark:bg-gold-500 dark:text-night dark:hover:bg-gold-400"
             >
               <Mail className="h-4 w-4" />
               Send a Message
@@ -85,7 +85,7 @@ export function Hero() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-brand-300 px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-brand-700 transition-all hover:border-brand-600 hover:bg-white/50"
+              className="inline-flex items-center gap-2 rounded-full border border-brand-300 px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-brand-700 transition-all hover:border-brand-600 hover:bg-white/50 dark:border-brand-700 dark:text-brand-100 dark:hover:border-gold-400 dark:hover:bg-ink-soft"
             >
               <WhatsAppIcon className="h-4 w-4" />
               WhatsApp
@@ -95,15 +95,18 @@ export function Hero() {
           {/* Mini rating */}
           <motion.div
             variants={item}
-            className="mt-10 flex items-center gap-4 border-t border-brand-200/70 pt-7"
+            className="mt-10 flex items-center gap-4 border-t border-brand-200/70 pt-7 dark:border-brand-800"
           >
             <div className="flex">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="h-4 w-4 fill-gold-400 text-gold-400" />
               ))}
             </div>
-            <p className="text-sm text-brand-800/70">
-              <span className="font-semibold text-brand-900">4.9 / 5</span> —
+            <p className="text-sm text-brand-800/70 dark:text-brand-100/60">
+              <span className="font-semibold text-brand-900 dark:text-ivory">
+                4.9 / 5
+              </span>{" "}
+              —
               from {site.patientsTreated} patients
             </p>
           </motion.div>
@@ -137,10 +140,10 @@ export function Hero() {
             transition={{ delay: 1 }}
             className="glass absolute -bottom-6 -left-6 rounded-2xl px-5 py-4 shadow-xl"
           >
-            <p className="font-serif text-4xl font-light text-brand-700">
+            <p className="font-serif text-4xl font-light text-brand-700 dark:text-gold-300">
               {site.yearsExperience}+
             </p>
-            <p className="mt-1 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-brand-800/60">
+            <p className="mt-1 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-brand-800/60 dark:text-brand-100/60">
               Years of Care
             </p>
           </motion.div>
@@ -150,10 +153,10 @@ export function Hero() {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             className="glass absolute -right-4 top-8 rounded-2xl px-5 py-4 shadow-xl"
           >
-            <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-brand-800/60">
+            <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-brand-800/60 dark:text-brand-100/60">
               Patients
             </p>
-            <p className="font-serif text-2xl font-light text-brand-700">
+            <p className="font-serif text-2xl font-light text-brand-700 dark:text-gold-300">
               {site.patientsTreated}
             </p>
           </motion.div>

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Class-based dark mode: `dark:` applies when <html> (or an ancestor)
+   has the `.dark` class, instead of the OS preference. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ─────────────────────────────────────────────
    Design tokens (Tailwind v4 @theme)
    Luxe & Editorial — deep evergreen + refined
@@ -28,6 +32,11 @@
   /* Warm editorial ivory canvas */
   --color-cream: #f7f4ec;
   --color-ivory: #fdfbf5;
+
+  /* Dark-mode canvas: warm near-black greens */
+  --color-night: #0a140e;
+  --color-ink: #101d15;
+  --color-ink-soft: #16261b;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
@@ -58,6 +67,12 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.dark body {
+  background-color: var(--color-night);
+  color: var(--color-brand-100);
 }
 
 /* Editorial headings: tighter tracking, optical sizing */
@@ -76,11 +91,20 @@ h3 {
 ::-webkit-scrollbar-track {
   background: var(--color-cream);
 }
+.dark ::-webkit-scrollbar-track {
+  background: var(--color-night);
+}
 ::-webkit-scrollbar-thumb {
   background: var(--color-brand-300);
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-500);
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-brand-700);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
   background: var(--color-brand-500);
 }
 
@@ -110,6 +134,10 @@ h3 {
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.dark .glass {
+  background: rgba(16, 29, 21, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Editorial eyebrow label: uppercase, let-spaced, gold rule */
@@ -159,6 +187,9 @@ h3 {
   pointer-events: none;
   opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.dark .paper-grain::after {
+  opacity: 0.05;
 }
 
 /* Reduced motion */

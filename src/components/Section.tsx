@@ -21,7 +21,7 @@ export function SectionHeading({
       <Reveal delay={1}>
         <h2
           className={`mt-6 font-serif text-4xl font-light leading-[1.08] tracking-tight sm:text-5xl md:text-6xl ${
-            light ? "text-ivory" : "text-brand-950"
+            light ? "text-ivory" : "text-brand-950 dark:text-ivory"
           }`}
         >
           {title}
@@ -31,7 +31,7 @@ export function SectionHeading({
         <Reveal delay={2}>
           <p
             className={`mx-auto mt-6 max-w-xl text-base leading-relaxed sm:text-lg ${
-              light ? "text-brand-100/70" : "text-brand-800/70"
+              light ? "text-brand-100/70" : "text-brand-800/70 dark:text-brand-100/60"
             }`}
           >
             {subtitle}

@@ -39,7 +39,7 @@ export function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="absolute -bottom-8 -right-4 hidden aspect-square w-44 overflow-hidden rounded-2xl border-4 border-ivory shadow-xl ring-1 ring-gold-400/40 sm:block"
+            className="absolute -bottom-8 -right-4 hidden aspect-square w-44 overflow-hidden rounded-2xl border-4 border-ivory shadow-xl ring-1 ring-gold-400/40 dark:border-ink sm:block"
           >
             <Image
               src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?auto=format&fit=crop&w=400&q=80"
@@ -57,14 +57,14 @@ export function About() {
             <span className="eyebrow">About the Doctor</span>
           </Reveal>
           <Reveal delay={1}>
-            <h2 className="mt-6 font-serif text-4xl font-light leading-[1.1] tracking-tight text-brand-950 sm:text-5xl">
+            <h2 className="mt-6 font-serif text-4xl font-light leading-[1.1] tracking-tight text-brand-950 dark:text-ivory sm:text-5xl">
               A healer, a mentor,
               <br />
               <span className="italic text-gradient">an entrepreneur.</span>
             </h2>
           </Reveal>
           <Reveal delay={2}>
-            <p className="mt-5 text-base leading-relaxed text-brand-800/75">
+            <p className="mt-5 text-base leading-relaxed text-brand-800/75 dark:text-brand-100/65">
               {site.doctorName} is a {site.credentials}-qualified general
               physician with more than {site.yearsExperience} years of dedicated
               practice. Rooted in the timeless principles of Ayurveda and
@@ -73,7 +73,7 @@ export function About() {
             </p>
           </Reveal>
           <Reveal delay={3}>
-            <p className="mt-4 text-base leading-relaxed text-brand-800/75">
+            <p className="mt-4 text-base leading-relaxed text-brand-800/75 dark:text-brand-100/65">
               Beyond the clinic, the doctor is a passionate healthcare
               entrepreneur — founding {site.clinicsFounded} wellness centers and
               building ventures that make quality, holistic care accessible to
@@ -88,7 +88,7 @@ export function About() {
                   <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-gold-400 text-gold-600">
                     <Check className="h-3.5 w-3.5" />
                   </span>
-                  <span className="text-sm font-medium text-brand-900">
+                  <span className="text-sm font-medium text-brand-900 dark:text-brand-100">
                     {h}
                   </span>
                 </div>

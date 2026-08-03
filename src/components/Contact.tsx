@@ -11,7 +11,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="paper-grain relative bg-gradient-to-b from-cream to-brand-50 py-24 sm:py-32"
+      className="paper-grain relative bg-gradient-to-b from-cream to-brand-50 py-24 dark:from-night dark:to-ink sm:py-32"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
@@ -31,14 +31,16 @@ export function Contact() {
           >
             <a
               href={`mailto:${site.email}`}
-              className="flex items-start gap-4 rounded-2xl border border-brand-200/70 bg-ivory p-5 transition-all hover:border-gold-400/60 hover:shadow-md"
+              className="flex items-start gap-4 rounded-2xl border border-brand-200/70 bg-ivory p-5 transition-all hover:border-gold-400/60 hover:shadow-md dark:border-brand-800 dark:bg-ink-soft"
             >
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-brand-200 text-brand-600">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-brand-200 text-brand-600 dark:border-brand-700 dark:text-gold-300">
                 <Mail className="h-5 w-5" strokeWidth={1.5} />
               </span>
               <div>
-                <p className="text-sm font-semibold text-brand-950">Email</p>
-                <p className="text-sm text-brand-800/70 break-all">
+                <p className="text-sm font-semibold text-brand-950 dark:text-ivory">
+                  Email
+                </p>
+                <p className="text-sm text-brand-800/70 break-all dark:text-brand-100/60">
                   {site.email}
                 </p>
               </div>
@@ -48,53 +50,65 @@ export function Contact() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start gap-4 rounded-2xl border border-brand-200/70 bg-ivory p-5 transition-all hover:border-gold-400/60 hover:shadow-md"
+              className="flex items-start gap-4 rounded-2xl border border-brand-200/70 bg-ivory p-5 transition-all hover:border-gold-400/60 hover:shadow-md dark:border-brand-800 dark:bg-ink-soft"
             >
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-green-200 text-green-600">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-green-200 text-green-600 dark:border-green-500/40 dark:text-green-400">
                 <WhatsAppIcon className="h-5 w-5" />
               </span>
               <div>
-                <p className="text-sm font-semibold text-brand-950">WhatsApp</p>
-                <p className="text-sm text-brand-800/70">
+                <p className="text-sm font-semibold text-brand-950 dark:text-ivory">
+                  WhatsApp
+                </p>
+                <p className="text-sm text-brand-800/70 dark:text-brand-100/60">
                   Chat with us instantly
                 </p>
               </div>
             </a>
 
-            <div className="flex items-start gap-4 rounded-2xl border border-brand-200/70 bg-ivory p-5">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-brand-200 text-brand-600">
+            <div className="flex items-start gap-4 rounded-2xl border border-brand-200/70 bg-ivory p-5 dark:border-brand-800 dark:bg-ink-soft">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-brand-200 text-brand-600 dark:border-brand-700 dark:text-gold-300">
                 <Phone className="h-5 w-5" strokeWidth={1.5} />
               </span>
               <div>
-                <p className="text-sm font-semibold text-brand-950">Phone</p>
-                <p className="text-sm text-brand-800/70">{site.phoneDisplay}</p>
+                <p className="text-sm font-semibold text-brand-950 dark:text-ivory">
+                  Phone
+                </p>
+                <p className="text-sm text-brand-800/70 dark:text-brand-100/60">
+                  {site.phoneDisplay}
+                </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 rounded-2xl border border-brand-200/70 bg-ivory p-5">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-brand-200 text-brand-600">
+            <div className="flex items-start gap-4 rounded-2xl border border-brand-200/70 bg-ivory p-5 dark:border-brand-800 dark:bg-ink-soft">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-brand-200 text-brand-600 dark:border-brand-700 dark:text-gold-300">
                 <MapPin className="h-5 w-5" strokeWidth={1.5} />
               </span>
               <div>
-                <p className="text-sm font-semibold text-brand-950">Clinic</p>
-                <p className="text-sm text-brand-800/70">{site.address}</p>
+                <p className="text-sm font-semibold text-brand-950 dark:text-ivory">
+                  Clinic
+                </p>
+                <p className="text-sm text-brand-800/70 dark:text-brand-100/60">
+                  {site.address}
+                </p>
               </div>
             </div>
 
             {/* Hours */}
-            <div className="rounded-2xl border border-brand-200/70 bg-ivory p-5">
-              <div className="flex items-center gap-2 text-brand-950">
-                <Clock className="h-5 w-5 text-brand-600" />
+            <div className="rounded-2xl border border-brand-200/70 bg-ivory p-5 dark:border-brand-800 dark:bg-ink-soft">
+              <div className="flex items-center gap-2 text-brand-950 dark:text-ivory">
+                <Clock className="h-5 w-5 text-brand-600 dark:text-gold-300" />
                 <p className="text-sm font-semibold">Clinic Hours</p>
               </div>
               <ul className="mt-3 space-y-1.5">
                 {site.hours.map((h) => (
                   <li
                     key={h.day}
-                    className="flex justify-between text-sm text-brand-800/70"
+                    className="flex justify-between text-sm text-brand-800/70 dark:text-brand-100/60"
                   >
                     <span>{h.day}</span>
-                    <span className="font-medium text-brand-900">{h.time}</span>
+                    <span className="font-medium text-brand-900 dark:text-brand-100">
+                      {h.time}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -107,7 +121,7 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3 rounded-2xl border border-brand-200/70 bg-ivory p-6 shadow-xl shadow-brand-900/5 sm:p-8"
+            className="lg:col-span-3 rounded-2xl border border-brand-200/70 bg-ivory p-6 shadow-xl shadow-brand-900/5 dark:border-brand-800 dark:bg-ink-soft sm:p-8"
           >
             <ContactForm />
           </motion.div>
