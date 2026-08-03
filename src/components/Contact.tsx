@@ -11,7 +11,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-gradient-to-b from-cream to-brand-50 py-24 sm:py-32"
+      className="paper-grain relative bg-gradient-to-b from-cream to-brand-50 py-24 sm:py-32"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
@@ -31,10 +31,10 @@ export function Contact() {
           >
             <a
               href={`mailto:${site.email}`}
-              className="flex items-start gap-4 rounded-2xl border border-brand-100 bg-white p-5 transition-shadow hover:shadow-md"
+              className="flex items-start gap-4 rounded-2xl border border-brand-200/70 bg-ivory p-5 transition-all hover:border-gold-400/60 hover:shadow-md"
             >
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brand-100 text-brand-600">
-                <Mail className="h-6 w-6" />
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-brand-200 text-brand-600">
+                <Mail className="h-5 w-5" strokeWidth={1.5} />
               </span>
               <div>
                 <p className="text-sm font-semibold text-brand-950">Email</p>
@@ -48,10 +48,10 @@ export function Contact() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start gap-4 rounded-2xl border border-brand-100 bg-white p-5 transition-shadow hover:shadow-md"
+              className="flex items-start gap-4 rounded-2xl border border-brand-200/70 bg-ivory p-5 transition-all hover:border-gold-400/60 hover:shadow-md"
             >
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-green-100 text-green-600">
-                <WhatsAppIcon className="h-6 w-6" />
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-green-200 text-green-600">
+                <WhatsAppIcon className="h-5 w-5" />
               </span>
               <div>
                 <p className="text-sm font-semibold text-brand-950">WhatsApp</p>
@@ -61,9 +61,9 @@ export function Contact() {
               </div>
             </a>
 
-            <div className="flex items-start gap-4 rounded-2xl border border-brand-100 bg-white p-5">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brand-100 text-brand-600">
-                <Phone className="h-6 w-6" />
+            <div className="flex items-start gap-4 rounded-2xl border border-brand-200/70 bg-ivory p-5">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-brand-200 text-brand-600">
+                <Phone className="h-5 w-5" strokeWidth={1.5} />
               </span>
               <div>
                 <p className="text-sm font-semibold text-brand-950">Phone</p>
@@ -71,9 +71,9 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="flex items-start gap-4 rounded-2xl border border-brand-100 bg-white p-5">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brand-100 text-brand-600">
-                <MapPin className="h-6 w-6" />
+            <div className="flex items-start gap-4 rounded-2xl border border-brand-200/70 bg-ivory p-5">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-brand-200 text-brand-600">
+                <MapPin className="h-5 w-5" strokeWidth={1.5} />
               </span>
               <div>
                 <p className="text-sm font-semibold text-brand-950">Clinic</p>
@@ -82,7 +82,7 @@ export function Contact() {
             </div>
 
             {/* Hours */}
-            <div className="rounded-2xl border border-brand-100 bg-white p-5">
+            <div className="rounded-2xl border border-brand-200/70 bg-ivory p-5">
               <div className="flex items-center gap-2 text-brand-950">
                 <Clock className="h-5 w-5 text-brand-600" />
                 <p className="text-sm font-semibold">Clinic Hours</p>
@@ -107,7 +107,7 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3 rounded-3xl border border-brand-100 bg-white p-6 shadow-xl shadow-brand-900/5 sm:p-8"
+            className="lg:col-span-3 rounded-2xl border border-brand-200/70 bg-ivory p-6 shadow-xl shadow-brand-900/5 sm:p-8"
           >
             <ContactForm />
           </motion.div>

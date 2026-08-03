@@ -34,7 +34,7 @@ export function Journey() {
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                    className="grid h-9 w-9 place-items-center rounded-full border-4 border-cream bg-brand-600 text-white shadow-lg"
+                    className="grid h-9 w-9 place-items-center rounded-full border-4 border-cream bg-brand-700 text-gold-300 shadow-lg"
                   >
                     <t.icon className="h-4 w-4" />
                   </motion.span>
@@ -46,17 +46,17 @@ export function Journey() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.5 }}
-                  className={`ml-12 w-full rounded-2xl border border-brand-100 bg-white p-6 shadow-sm md:ml-0 md:w-[calc(50%-2.5rem)] ${
+                  className={`ml-12 w-full rounded-2xl border border-brand-200/70 bg-ivory p-6 shadow-sm md:ml-0 md:w-[calc(50%-2.5rem)] ${
                     left ? "md:mr-auto md:text-right" : "md:ml-auto"
                   }`}
                 >
-                  <span className="inline-block rounded-full bg-gold-400/20 px-3 py-1 text-xs font-bold text-gold-600">
+                  <span className="font-serif text-2xl font-light italic text-gold-600">
                     {t.year}
                   </span>
-                  <h3 className="mt-3 font-serif text-xl font-bold text-brand-950">
+                  <h3 className="mt-2 font-serif text-xl font-normal text-brand-950">
                     {t.title}
                   </h3>
-                  <p className="text-sm font-semibold text-brand-600">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-brand-600">
                     {t.org}
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-brand-800/70">

@@ -35,31 +35,32 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#home" className="flex items-center gap-2 group">
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand-600 text-white transition-transform group-hover:rotate-12">
+        <a href="#home" className="group flex items-center gap-2.5">
+          <span className="grid h-10 w-10 place-items-center rounded-full border border-gold-400/60 text-brand-600 transition-all group-hover:border-gold-500 group-hover:text-brand-700">
             <Leaf className="h-5 w-5" />
           </span>
-          <span className="font-serif text-lg font-bold text-brand-950">
+          <span className="font-serif text-xl font-medium tracking-tight text-brand-950">
             {site.doctorName}
           </span>
         </a>
 
         {/* Desktop links */}
-        <ul className="hidden items-center gap-1 lg:flex">
+        <ul className="hidden items-center gap-2 lg:flex">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="relative rounded-lg px-4 py-2 text-sm font-medium text-brand-900 transition-colors hover:text-brand-600"
+                className="group relative px-3 py-2 text-[0.8rem] font-medium uppercase tracking-widest text-brand-900/80 transition-colors hover:text-brand-700"
               >
                 {l.label}
+                <span className="absolute inset-x-3 -bottom-0.5 h-px origin-left scale-x-0 bg-gold-500 transition-transform duration-300 group-hover:scale-x-100" />
               </a>
             </li>
           ))}
           <li>
             <a
               href="#contact"
-              className="ml-2 rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-600/20 transition-all hover:bg-brand-700 hover:shadow-brand-600/30"
+              className="ml-3 rounded-full border border-brand-600 bg-brand-600 px-6 py-2.5 text-[0.8rem] font-semibold uppercase tracking-widest text-ivory shadow-lg shadow-brand-900/10 transition-all hover:bg-transparent hover:text-brand-700"
             >
               Book Now
             </a>
@@ -92,7 +93,7 @@ export function Navbar() {
                   <a
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="block rounded-lg px-4 py-3 text-base font-medium text-brand-900 hover:bg-brand-100"
+                    className="block rounded-lg px-4 py-3 text-sm font-medium uppercase tracking-widest text-brand-900 hover:bg-brand-100"
                   >
                     {l.label}
                   </a>
@@ -102,7 +103,7 @@ export function Navbar() {
                 <a
                   href="#contact"
                   onClick={() => setOpen(false)}
-                  className="mt-2 block rounded-full bg-brand-600 px-5 py-3 text-center text-base font-semibold text-white"
+                  className="mt-2 block rounded-full bg-brand-600 px-5 py-3 text-center text-sm font-semibold uppercase tracking-widest text-ivory"
                 >
                   Book Now
                 </a>

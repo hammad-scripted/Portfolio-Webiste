@@ -37,7 +37,7 @@ function Counter({ value }: { value: string }) {
 export function Stats() {
   return (
     <section className="relative z-10 mx-auto -mt-8 max-w-6xl px-5 sm:px-8">
-      <div className="grid grid-cols-2 gap-4 rounded-3xl bg-brand-800 p-6 shadow-2xl shadow-brand-900/30 sm:p-10 md:grid-cols-4">
+      <div className="grid grid-cols-2 gap-y-8 rounded-[1.75rem] bg-brand-900 p-8 shadow-2xl shadow-brand-900/30 sm:p-12 md:grid-cols-4 md:divide-x md:divide-brand-700/60">
         {stats.map((s, i) => (
           <motion.div
             key={s.label}
@@ -45,12 +45,12 @@ export function Stats() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="text-center"
+            className="px-4 text-center"
           >
-            <p className="font-serif text-3xl font-bold text-gold-400 sm:text-4xl">
+            <p className="font-serif text-4xl font-light text-gold-400 sm:text-5xl">
               <Counter value={s.value} />
             </p>
-            <p className="mt-1 text-xs font-medium uppercase tracking-wide text-brand-100/80 sm:text-sm">
+            <p className="mt-2 text-[0.72rem] font-medium uppercase tracking-[0.2em] text-brand-100/70">
               {s.label}
             </p>
           </motion.div>

@@ -21,62 +21,63 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden pt-28 pb-16"
+      className="paper-grain relative flex min-h-screen items-center overflow-hidden pt-28 pb-16"
     >
-      {/* Decorative animated blobs */}
+      {/* Decorative animated blobs — soft, refined */}
       <motion.div
         aria-hidden
-        className="absolute -left-32 top-20 h-96 w-96 rounded-full bg-brand-300/40 blur-3xl"
-        animate={{ scale: [1, 1.15, 1], x: [0, 30, 0] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -left-40 top-16 h-[30rem] w-[30rem] rounded-full bg-brand-200/45 blur-3xl"
+        animate={{ scale: [1, 1.12, 1], x: [0, 30, 0] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         aria-hidden
-        className="absolute -right-32 bottom-10 h-[28rem] w-[28rem] rounded-full bg-gold-300/40 blur-3xl"
-        animate={{ scale: [1, 1.2, 1], y: [0, -30, 0] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -right-40 bottom-0 h-[32rem] w-[32rem] rounded-full bg-gold-200/50 blur-3xl"
+        animate={{ scale: [1, 1.18, 1], y: [0, -30, 0] }}
+        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 sm:px-8 lg:grid-cols-2">
         {/* Left — text */}
         <motion.div variants={container} initial="hidden" animate="visible">
-          <motion.div
-            variants={item}
-            className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white/70 px-4 py-2 text-sm font-medium text-brand-700 shadow-sm"
-          >
-            <ShieldCheck className="h-4 w-4" />
-            {site.credentials} • Trusted since {2024 - site.yearsExperience}
+          <motion.div variants={item}>
+            <span className="eyebrow">
+              {site.credentials} · Est. {2024 - site.yearsExperience}
+            </span>
           </motion.div>
 
           <motion.h1
             variants={item}
-            className="mt-6 font-serif text-4xl font-bold leading-[1.1] text-brand-950 sm:text-5xl lg:text-6xl"
+            className="mt-7 font-serif text-5xl font-light leading-[1.02] tracking-tight text-brand-950 sm:text-6xl lg:text-7xl"
           >
-            Meet <span className="text-gradient">{site.doctorName}</span>
+            Healing,
+            <br />
+            <span className="text-gradient italic">reimagined.</span>
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="mt-4 text-lg font-medium text-brand-800"
+            className="mt-7 flex items-center gap-3 text-sm font-medium uppercase tracking-[0.2em] text-brand-700"
           >
+            <ShieldCheck className="h-4 w-4 text-gold-500" />
             {site.title}
           </motion.p>
 
           <motion.p
             variants={item}
-            className="mt-4 max-w-xl text-base leading-relaxed text-brand-800/70 sm:text-lg"
+            className="mt-5 max-w-lg text-base leading-relaxed text-brand-800/70 sm:text-lg"
           >
-            {site.tagline} With over {site.yearsExperience} years of experience,
-            I blend authentic Ayurvedic wisdom with modern medicine to help you
-            live a healthier, more balanced life.
+            {site.tagline} For over {site.yearsExperience} years,{" "}
+            {site.doctorName} has blended authentic Ayurvedic wisdom with modern
+            medicine — helping you live a healthier, more balanced life.
           </motion.p>
 
-          <motion.div variants={item} className="mt-8 flex flex-wrap gap-4">
+          <motion.div variants={item} className="mt-9 flex flex-wrap gap-3">
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-brand-600 px-7 py-3.5 font-semibold text-white shadow-xl shadow-brand-600/25 transition-all hover:bg-brand-700 hover:shadow-brand-600/40"
+              className="group inline-flex items-center gap-2 rounded-full bg-brand-700 px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-ivory shadow-xl shadow-brand-900/15 transition-all hover:bg-brand-800"
             >
-              <Mail className="h-5 w-5" />
+              <Mail className="h-4 w-4" />
               Send a Message
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
@@ -84,26 +85,26 @@ export function Hero() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-brand-600 bg-white px-7 py-3.5 font-semibold text-brand-700 transition-all hover:bg-brand-50"
+              className="inline-flex items-center gap-2 rounded-full border border-brand-300 px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-brand-700 transition-all hover:border-brand-600 hover:bg-white/50"
             >
-              <WhatsAppIcon className="h-5 w-5" />
+              <WhatsAppIcon className="h-4 w-4" />
               WhatsApp
             </a>
           </motion.div>
 
           {/* Mini rating */}
-          <motion.div variants={item} className="mt-8 flex items-center gap-3">
+          <motion.div
+            variants={item}
+            className="mt-10 flex items-center gap-4 border-t border-brand-200/70 pt-7"
+          >
             <div className="flex">
               {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="h-5 w-5 fill-gold-400 text-gold-400"
-                />
+                <Star key={i} className="h-4 w-4 fill-gold-400 text-gold-400" />
               ))}
             </div>
             <p className="text-sm text-brand-800/70">
-              <span className="font-semibold text-brand-900">4.9/5</span> from{" "}
-              {site.patientsTreated} happy patients
+              <span className="font-semibold text-brand-900">4.9 / 5</span> —
+              from {site.patientsTreated} patients
             </p>
           </motion.div>
         </motion.div>
@@ -115,7 +116,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease: EASE }}
           className="relative mx-auto w-full max-w-md"
         >
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-brand-900/20 ring-1 ring-brand-900/5">
+          {/* Thin gold frame offset behind the portrait */}
+          <div className="absolute -inset-3 rounded-[2.2rem] border border-gold-400/50" />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-brand-900/25 ring-1 ring-brand-900/5">
             <Image
               src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80"
               alt={`Portrait of ${site.doctorName}`}
@@ -124,6 +127,7 @@ export function Hero() {
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 400px"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-950/25 to-transparent" />
           </div>
 
           {/* Floating stat card */}
@@ -131,12 +135,12 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
-            className="glass absolute -bottom-6 -left-6 rounded-2xl p-4 shadow-xl"
+            className="glass absolute -bottom-6 -left-6 rounded-2xl px-5 py-4 shadow-xl"
           >
-            <p className="font-serif text-3xl font-bold text-brand-700">
+            <p className="font-serif text-4xl font-light text-brand-700">
               {site.yearsExperience}+
             </p>
-            <p className="text-xs font-medium text-brand-800/70">
+            <p className="mt-1 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-brand-800/60">
               Years of Care
             </p>
           </motion.div>
@@ -144,10 +148,12 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="glass absolute -right-4 top-8 rounded-2xl px-4 py-3 shadow-xl"
+            className="glass absolute -right-4 top-8 rounded-2xl px-5 py-4 shadow-xl"
           >
-            <p className="text-xs font-medium text-brand-800/70">Patients</p>
-            <p className="font-serif text-xl font-bold text-brand-700">
+            <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-brand-800/60">
+              Patients
+            </p>
+            <p className="font-serif text-2xl font-light text-brand-700">
               {site.patientsTreated}
             </p>
           </motion.div>

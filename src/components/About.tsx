@@ -24,7 +24,7 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-2xl shadow-brand-900/15"
+            className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] shadow-2xl shadow-brand-900/15 ring-1 ring-brand-900/5"
           >
             <Image
               src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=80"
@@ -39,7 +39,7 @@ export function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="absolute -bottom-8 -right-4 hidden aspect-square w-44 overflow-hidden rounded-2xl border-4 border-cream shadow-xl sm:block"
+            className="absolute -bottom-8 -right-4 hidden aspect-square w-44 overflow-hidden rounded-2xl border-4 border-ivory shadow-xl ring-1 ring-gold-400/40 sm:block"
           >
             <Image
               src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?auto=format&fit=crop&w=400&q=80"
@@ -54,13 +54,13 @@ export function About() {
         {/* Text */}
         <div>
           <Reveal>
-            <span className="inline-block rounded-full bg-brand-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-700">
-              About the Doctor
-            </span>
+            <span className="eyebrow">About the Doctor</span>
           </Reveal>
           <Reveal delay={1}>
-            <h2 className="mt-5 font-serif text-3xl font-bold text-brand-950 sm:text-4xl">
-              A healer, a mentor, and an entrepreneur.
+            <h2 className="mt-6 font-serif text-4xl font-light leading-[1.1] tracking-tight text-brand-950 sm:text-5xl">
+              A healer, a mentor,
+              <br />
+              <span className="italic text-gradient">an entrepreneur.</span>
             </h2>
           </Reveal>
           <Reveal delay={2}>
@@ -85,8 +85,8 @@ export function About() {
             {highlights.map((h, i) => (
               <Reveal key={h} delay={4 + i}>
                 <div className="flex items-start gap-3">
-                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-600 text-white">
-                    <Check className="h-4 w-4" />
+                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-gold-400 text-gold-600">
+                    <Check className="h-3.5 w-3.5" />
                   </span>
                   <span className="text-sm font-medium text-brand-900">
                     {h}

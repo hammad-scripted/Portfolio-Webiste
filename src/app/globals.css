@@ -2,32 +2,37 @@
 
 /* ─────────────────────────────────────────────
    Design tokens (Tailwind v4 @theme)
-   Warm Ayurvedic palette: forest green + gold
+   Luxe & Editorial — deep evergreen + refined
+   gold on a warm ivory canvas.
    ───────────────────────────────────────────── */
 @theme {
-  --color-brand-50: #f2f8f4;
-  --color-brand-100: #dcefe1;
-  --color-brand-200: #bcdec8;
-  --color-brand-300: #8ec5a3;
-  --color-brand-400: #5aa678;
-  --color-brand-500: #388858;
-  --color-brand-600: #276c45;
-  --color-brand-700: #1f5638;
-  --color-brand-800: #1b452f;
-  --color-brand-900: #163a28;
-  --color-brand-950: #0a2016;
+  --color-brand-50: #f4f7f4;
+  --color-brand-100: #e4ece5;
+  --color-brand-200: #c6d8c9;
+  --color-brand-300: #98b89e;
+  --color-brand-400: #628f6c;
+  --color-brand-500: #3f7049;
+  --color-brand-600: #2d5637;
+  --color-brand-700: #24462d;
+  --color-brand-800: #1c3624;
+  --color-brand-900: #14281a;
+  --color-brand-950: #0b1810;
 
-  --color-gold-300: #f3d38f;
-  --color-gold-400: #e9bd5f;
-  --color-gold-500: #d9a337;
-  --color-gold-600: #bd8722;
+  /* Refined, muted gold (not brassy) */
+  --color-gold-200: #f0e2be;
+  --color-gold-300: #e4cf95;
+  --color-gold-400: #d4b671;
+  --color-gold-500: #bd9a4e;
+  --color-gold-600: #9c7c39;
 
-  --color-cream: #fbf8f1;
+  /* Warm editorial ivory canvas */
+  --color-cream: #f7f4ec;
+  --color-ivory: #fdfbf5;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
 
-  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee: marquee 38s linear infinite;
 }
 
 @keyframes marquee {
@@ -51,7 +56,17 @@ body {
   color: var(--color-brand-950);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
+}
+
+/* Editorial headings: tighter tracking, optical sizing */
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+  font-optical-sizing: auto;
 }
 
 /* Custom scrollbar */
@@ -59,30 +74,91 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-brand-50);
+  background: var(--color-cream);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-brand-400);
+  background: var(--color-brand-300);
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-brand-600);
+  background: var(--color-brand-500);
 }
 
-/* Utility: text gradient */
+::selection {
+  background: var(--color-gold-300);
+  color: var(--color-brand-950);
+}
+
+/* ── Utilities ──────────────────────────────── */
+
+/* Warm gold text gradient */
 .text-gradient {
-  background: linear-gradient(120deg, var(--color-brand-600), var(--color-gold-500));
+  background: linear-gradient(
+    100deg,
+    var(--color-gold-600),
+    var(--color-gold-400) 60%,
+    var(--color-gold-500)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Utility: glass card */
+/* Glass card */
 .glass {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(253, 251, 245, 0.72);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Editorial eyebrow label: uppercase, let-spaced, gold rule */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-gold-600);
+}
+.eyebrow::before {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: var(--color-gold-500);
+}
+.eyebrow--center::after {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: var(--color-gold-500);
+}
+
+/* Thin decorative divider */
+.rule-gold {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold-400),
+    transparent
+  );
+}
+
+/* Fine grain / paper texture overlay for luxe depth */
+.paper-grain {
+  position: relative;
+}
+.paper-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* Reduced motion */

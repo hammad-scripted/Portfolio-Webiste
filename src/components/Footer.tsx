@@ -25,11 +25,11 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand-600 text-white">
-                <Leaf className="h-5 w-5" />
+            <div className="flex items-center gap-2.5">
+              <span className="grid h-10 w-10 place-items-center rounded-full border border-gold-400/60 text-gold-300">
+                <Leaf className="h-5 w-5" strokeWidth={1.5} />
               </span>
-              <span className="font-serif text-lg font-bold text-white">
+              <span className="font-serif text-xl font-medium text-ivory">
                 {site.doctorName}
               </span>
             </div>
@@ -40,7 +40,9 @@ export function Footer() {
 
           {/* Nav */}
           <div>
-            <h4 className="font-semibold text-white">Explore</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
+              Explore
+            </h4>
             <ul className="mt-4 grid grid-cols-2 gap-2">
               {nav.map((n) => (
                 <li key={n.href}>
@@ -57,7 +59,9 @@ export function Footer() {
 
           {/* Contact + social */}
           <div>
-            <h4 className="font-semibold text-white">Connect</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
+              Connect
+            </h4>
             <div className="mt-4 flex flex-col gap-3">
               <a
                 href={`mailto:${site.email}`}

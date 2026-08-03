@@ -8,7 +8,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="relative bg-gradient-to-b from-brand-50 to-cream py-24 sm:py-32"
+      className="paper-grain relative bg-gradient-to-b from-brand-50 to-cream py-24 sm:py-32"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
@@ -25,14 +25,14 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: (i % 4) * 0.1 }}
-              whileHover={{ y: -8 }}
-              className="group relative overflow-hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-xl hover:shadow-brand-900/10"
+              whileHover={{ y: -6 }}
+              className="group relative overflow-hidden rounded-2xl border border-brand-200/70 bg-ivory p-7 transition-all hover:border-gold-400/60 hover:shadow-xl hover:shadow-brand-900/10"
             >
-              <div className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-brand-500 to-gold-400 transition-transform duration-300 group-hover:scale-x-100" />
-              <span className="grid h-14 w-14 place-items-center rounded-xl bg-brand-100 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
-                <s.icon className="h-7 w-7" />
+              <div className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-gold-500 transition-transform duration-300 group-hover:scale-x-100" />
+              <span className="grid h-14 w-14 place-items-center rounded-full border border-brand-200 text-brand-600 transition-colors group-hover:border-gold-400 group-hover:text-gold-600">
+                <s.icon className="h-6 w-6" strokeWidth={1.5} />
               </span>
-              <h3 className="mt-5 font-serif text-lg font-bold text-brand-950">
+              <h3 className="mt-6 font-serif text-xl font-normal text-brand-950">
                 {s.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-brand-800/70">

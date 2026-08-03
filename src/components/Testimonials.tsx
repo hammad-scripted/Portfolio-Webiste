@@ -29,24 +29,28 @@ export function Testimonials() {
           {row.map((t, i) => (
             <figure
               key={i}
-              className="w-80 shrink-0 rounded-3xl border border-brand-100 bg-white p-7 shadow-sm"
+              className="w-80 shrink-0 rounded-2xl border border-brand-200/70 bg-ivory p-8 shadow-sm"
             >
-              <Quote className="h-8 w-8 text-brand-200" />
-              <div className="mt-3 flex gap-0.5">
+              <Quote className="h-9 w-9 fill-gold-300/50 text-gold-300/50" />
+              <blockquote className="mt-4 font-serif text-lg font-light italic leading-relaxed text-brand-900">
+                “{t.quote}”
+              </blockquote>
+              <div className="mt-5 flex gap-0.5">
                 {[...Array(5)].map((_, s) => (
                   <Star key={s} className="h-4 w-4 fill-gold-400 text-gold-400" />
                 ))}
               </div>
-              <blockquote className="mt-4 text-sm leading-relaxed text-brand-800/80">
-                “{t.quote}”
-              </blockquote>
-              <figcaption className="mt-5 flex items-center gap-3">
-                <span className="grid h-11 w-11 place-items-center rounded-full bg-brand-100 font-serif text-lg font-bold text-brand-700">
+              <figcaption className="mt-5 flex items-center gap-3 border-t border-brand-200/70 pt-5">
+                <span className="grid h-11 w-11 place-items-center rounded-full border border-gold-400/50 font-serif text-lg font-light text-brand-700">
                   {t.name.charAt(0)}
                 </span>
                 <div>
-                  <p className="text-sm font-bold text-brand-950">{t.name}</p>
-                  <p className="text-xs text-brand-800/60">{t.role}</p>
+                  <p className="text-sm font-semibold text-brand-950">
+                    {t.name}
+                  </p>
+                  <p className="text-xs uppercase tracking-wider text-brand-800/60">
+                    {t.role}
+                  </p>
                 </div>
               </figcaption>
             </figure>
