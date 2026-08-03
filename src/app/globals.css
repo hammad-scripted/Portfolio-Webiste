@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+   Design tokens (Tailwind v4 @theme)
+   Warm Ayurvedic palette: forest green + gold
+   ───────────────────────────────────────────── */
+@theme {
+  --color-brand-50: #f2f8f4;
+  --color-brand-100: #dcefe1;
+  --color-brand-200: #bcdec8;
+  --color-brand-300: #8ec5a3;
+  --color-brand-400: #5aa678;
+  --color-brand-500: #388858;
+  --color-brand-600: #276c45;
+  --color-brand-700: #1f5638;
+  --color-brand-800: #1b452f;
+  --color-brand-900: #163a28;
+  --color-brand-950: #0a2016;
+
+  --color-gold-300: #f3d38f;
+  --color-gold-400: #e9bd5f;
+  --color-gold-500: #d9a337;
+  --color-gold-600: #bd8722;
+
+  --color-cream: #fbf8f1;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+
+  --animate-marquee: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Base
+   ───────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-brand-950);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-50);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-400);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-600);
+}
+
+/* Utility: text gradient */
+.text-gradient {
+  background: linear-gradient(120deg, var(--color-brand-600), var(--color-gold-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Utility: glass card */
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
